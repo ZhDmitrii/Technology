@@ -291,14 +291,14 @@ def print_csv_file(cs_file):
 
 def reads_employees_from_json(j_file):
     """Функция читает данные о сотрудниках из JSON."""
-    with open(j_file, "r", encoding="utf-8") as j_file:
-        return json.load(j_file)
+    with open(j_file, "r", encoding="utf-8") as j:
+        return json.load(j)
 
 
 def reads_performance_from_csv(cs_file):
     """Функция читает данные о сотрудниках из CSV файла."""
-    with open(cs_file, "r", encoding="utf-8") as cs_file:
-        reader = csv.reader(cs_file)
+    with open(cs_file, "r", encoding="utf-8") as cs:
+        reader = csv.reader(cs)
         next(reader)
         return [(row[0], float(row[1])) for row in reader]
 
